@@ -6,7 +6,7 @@ import {
 } from "./components"
 import icons from "./assets"
 import {type MovieList} from "./types"
-import data from "./data.json"
+// import data from "./data.json"
 import { useEffect, useState } from 'react'
 
 
@@ -14,11 +14,13 @@ import { useEffect, useState } from 'react'
 
 function App() {
   const [movieData, setMovieData] = useState<MovieList[] | null>()
-  const typedMovieList: MovieList[] = (data as MovieList[])
+  // const typedMovieList: MovieList[] = (data as MovieList[])
 
   useEffect(()=>{
-    setMovieData(typedMovieList)
-  }, [typedMovieList])
+    fetch('/data.json')
+    .then(res => res.json())
+    .then(json => setMovieData(json))
+  },[])
 
 
   return (
