@@ -1,0 +1,13 @@
+.carousel {
+  height: 140px;
+  width: 240px;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  gap: 16px;
+  overflow: hidden;
+}
+
+.carousel__image{
+  object-fit: cover;
+}

@@ -1,0 +1,30 @@
+.header {
+  background-color: var(--blue900);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 16.23px;
+}
+
+.header__logo{
+  height: 20px;
+  width: 25px;
+}
+
+.header__user{
+  height: 22px;
+  width: 22px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+}
+
+.header__tabs{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.tabs__icon{
+  height: 16px;
+  width: 16px;
+}

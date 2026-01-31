@@ -1,0 +1,22 @@
+.recommended__thumbnail {
+  width: 100%;
+  display: flex;
+}
+
+.image__container {
+  display: flex;
+  height: 110px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.thumbnail__image {
+  object-fit: cover;
+  object-position: top;
+  width: 100%;
+}
+
+.thumbnail__bookmark {
+  position: absolute;
+}
