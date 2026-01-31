@@ -6,6 +6,9 @@ import TvTabIcon from "./icon-nav-tv-series.svg";
 import BookmarkTabIcon from "./icon-nav-bookmark.svg";
 import SearchIcon from "./icon-search.svg"
 import BookEmpty from "./icon-bookmark-empty.svg"
+import BookFull from "./icon-bookmark-full.svg"
+import CategoryTV from "./icon-category-tv.svg"
+import CategoryMovie from "./icon-category-movie.svg"
 
 export default {
  AppLogo,
@@ -16,4 +19,7 @@ export default {
  BookmarkTabIcon,
  SearchIcon,
  BookEmpty,
+ BookFull,
+ CategoryMovie,
+ CategoryTV,
 };

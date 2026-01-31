@@ -1,16 +1,21 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
+:root {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  line-height: 1.5;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --light: 300;
+  --medium: 500;
   --white: #fff;
   --blue950: #10141E;
   --opaque-blue-950: rgb(16, 20, 30, 50%);
   --blue900: #161D2F;
+  --opaque-white: rgba(255, 255, 255, 75%);
 }
 
   /* color-scheme: light dark;
@@ -21,15 +26,19 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  font-weight: var(--light);
 }
 
 body {
   margin: 0;
   background-color: var(--blue950);
   color: var(--white);
-  
 }
 
+h1,h2,h3,h4,h5{
+  font-weight: var(--medium);
+}
 
 
 @media (prefers-color-scheme: light) {

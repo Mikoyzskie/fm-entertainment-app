@@ -1,4 +1,6 @@
 .bookmark__button {
+  outline: none;
+  border: none;
   height: 32px;
   width: 32px;
   border-radius: 50%;
@@ -6,4 +8,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.bookmark__button:hover{
+  cursor: pointer;
 }
