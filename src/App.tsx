@@ -42,7 +42,7 @@ function App() {
                   return(
                     <RecommendedThumb
                       key={index}
-                      image={`/src/${item.thumbnail.regular.small}`}
+                      image={`${item.thumbnail.regular.small}`}
                       category={item.category}
                       rating={item.rating}
                       year={item.year}
