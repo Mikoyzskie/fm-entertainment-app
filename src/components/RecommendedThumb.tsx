@@ -1,14 +1,17 @@
 import styles from "./styles/recommended.module.css"
 import icons from "../assets/index"
 import {BookmarkButton, Circle} from "./index"
+import { useCallback } from "react"
+import { type Regular } from "../types"
 
 type Props = {
-  image: string,
+  image: Regular,
   year: number,
   category: "Movie" | "TV Series",
   rating: string,
   title: string
-  isBookmarked: boolean
+  isBookmarked: boolean,
+  width: number
 }
 
 function RecommendedThumb({
@@ -17,12 +20,21 @@ function RecommendedThumb({
   category,
   rating,
   title,
-  isBookmarked
+  isBookmarked,
+  width
 }: Props) {
+
+  const getImage = useCallback(()=>{
+    if (width > 768) return image.large
+    if (width > 365 && width < 768) return image.medium
+
+    return image.small
+  },[width, image])
+
   return (
     <div className={styles.recommended__thumbnail}>
       <div className={styles.image__container}>
-        <img src={image} alt="Carousel Image" className={styles.thumbnail__image} />
+        <img src={getImage()} alt="Carousel Image" className={styles.thumbnail__image} />
         <BookmarkButton bookmarked={isBookmarked}/>
       </div>
       <div className={styles.thumbnail__details }>

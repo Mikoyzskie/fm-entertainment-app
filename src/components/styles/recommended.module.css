@@ -36,3 +36,15 @@
   top: 0;
   left: 0;
 } */
+
+@media only screen and (min-width: 768px){
+  .image__container {
+    height: 140px;
+  }
+}
+
+@media only screen and (min-width: 1440px){
+  .image__container {
+    height: 174px;
+  }
+}

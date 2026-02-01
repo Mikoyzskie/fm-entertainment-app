@@ -75,3 +75,17 @@
   column-gap: 16px;
   margin-bottom: 13px;
 }
+
+@media only screen and (min-width: 366px){
+  .recommended__grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 24px;
+    column-gap: 30px;
+  }
+}
+
+@media only screen and (min-width: 769px){
+  .recommended__grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

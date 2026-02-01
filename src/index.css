@@ -22,18 +22,24 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424; */
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Outfit", sans-serif;
   font-weight: var(--light);
+  
 }
 
 body {
   margin: 0;
   background-color: var(--blue950);
   color: var(--white);
+  transition: all 0.5s ease-in-out;
 }
 
 h1,h2,h3,h4,h5{

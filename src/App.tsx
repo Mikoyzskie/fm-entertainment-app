@@ -7,14 +7,16 @@ import {
 import icons from "./assets"
 import {type MovieList} from "./types"
 // import data from "./data.json"
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 
 
 
 function App() {
-  const [movieData, setMovieData] = useState<MovieList[] | null>()
-  // const typedMovieList: MovieList[] = (data as MovieList[])
+  const [movieData, setMovieData] = useState<MovieList[] | null>();
+  const [containerSize, setContainerSize] = useState(365);
+
+  const mainContainer = useRef<HTMLDivElement>(null)
 
   useEffect(()=>{
     fetch('/data.json')
@@ -22,11 +24,23 @@ function App() {
     .then(json => setMovieData(json))
   },[])
 
+  useEffect(()=>{
+    if(!mainContainer.current) return
+
+    const observer = new ResizeObserver(obs =>{
+      const width  = obs[0].contentRect.width;
+      setContainerSize(width)
+    })
+
+    observer.observe(mainContainer.current)
+
+    return () => observer.disconnect()
+  },[])
 
   return (
     <>
       <Header/>
-      <main className='main'>
+      <main className='main' ref={mainContainer}>
         <div className='main__search'>
           <img src={icons.SearchIcon} alt="User" className="search__icon" />
           <input id='search' name="search" type="text" placeholder='Search for movies or TV series' className='input__search'/>
@@ -44,12 +58,13 @@ function App() {
                   return(
                     <RecommendedThumb
                       key={index}
-                      image={`${item.thumbnail.regular.small}`}
+                      image={item.thumbnail.regular}
                       category={item.category}
                       rating={item.rating}
                       year={item.year}
                       title={item.title}
                       isBookmarked={item.isBookmarked}
+                      width={containerSize}
                     />
                   )
                 }
